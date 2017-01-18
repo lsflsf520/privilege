@@ -4,14 +4,17 @@
  */
 package org.ralasafe.db.sql;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Map;
-
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.ralasafe.RalasafeException;
 import org.ralasafe.user.User;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class SimpleValue implements Value {
 	private static Log log=LogFactory.getLog( SimpleValue.class );
@@ -20,6 +23,8 @@ public class SimpleValue implements Value {
 	public static final String FLOAT = "float";
 	public static final String BOOLEAN = "boolean";
 	public static final String DATETIME = "datetime";
+	public static final String STRING_LIST = "stringlist";
+	public static final String INTEGER_LIST = "integerlist";
 	private String type;
 	private String value;
 	private boolean behindLike;
@@ -75,7 +80,27 @@ public class SimpleValue implements Value {
 				log.error( "", e );
 				throw new RalasafeException(e);
 			}
-		} else {
+		} else if(type.equals(STRING_LIST)){
+			if(StringUtils.isNotBlank(value)){
+				List<String> list = new ArrayList<>();
+				String[] parts = value.split(",");
+				for(String part : parts){
+					list.add(part.trim());
+				}
+				return list;
+			}
+			return new ArrayList<>();
+		} else if(type.equals(INTEGER_LIST)){
+			if(StringUtils.isNotBlank(value)){
+				List<Integer> list = new ArrayList<>();
+				String[] parts = value.split(",");
+				for(String part : parts){
+					list.add(Integer.valueOf(part.trim()));
+				}
+				return list;
+			}
+			return new ArrayList<>();
+		}else {
 			String msg="Not supported value type '" + type + "'.";
 			log.error( msg );
 			throw new RalasafeException(msg);

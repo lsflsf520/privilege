@@ -50,6 +50,8 @@ if( var!=null ) {
 		<option value="<%=SimpleValueTypeTypeType.FLOAT%>" <%=type.equals(""+SimpleValueTypeTypeType.FLOAT)?"selected":"" %>>Float</option>
 		<option value="<%=SimpleValueTypeTypeType.BOOLEAN%>" <%=type.equals(""+SimpleValueTypeTypeType.BOOLEAN)?"selected":"" %>>Boolean</option>
 		<option value="<%=SimpleValueTypeTypeType.DATETIME%>" <%=type.equals(""+SimpleValueTypeTypeType.DATETIME)?"selected":"" %>>Datetime(y-m-d h:s)</option>
+		<option value="<%=SimpleValueTypeTypeType.STRING_LIST%>" <%=type.equals(""+SimpleValueTypeTypeType.STRING_LIST)?"selected":"" %>>String List(xx,yy)</option>
+		<option value="<%=SimpleValueTypeTypeType.INTEGER_LIST%>" <%=type.equals(""+SimpleValueTypeTypeType.INTEGER_LIST)?"selected":"" %>>Integer List(1,2)</option>
 	</select>
 	<br/>
 	<label><%=i18n.say( "Value" )%></label>

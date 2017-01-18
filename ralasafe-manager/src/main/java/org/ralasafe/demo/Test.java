@@ -1,9 +1,12 @@
 package org.ralasafe.demo;
 
-import org.ralasafe.Factory;
-import org.ralasafe.privilege.Role;
+import org.ralasafe.Ralasafe;
+import org.ralasafe.entitle.Decision;
 import org.ralasafe.user.User;
 import org.ralasafe.util.Startup;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by neko on 2017/1/11.
@@ -21,8 +24,16 @@ public class Test {
 
         System.out.println(result);*/
 
-        Role role = (Role)Factory.getRoleManager( "ralasafe" ).getRole("好汉");
-        System.out.println(role);
+        /*Role role = (Role)Factory.getRoleManager( "ralasafe" ).getRole("好汉");
+        System.out.println(role);*/
+
+        Map<String, String> context = new HashMap<>();
+        context.put("marketplace", "amazon");
+        Decision decision = Ralasafe.permit(PrivConstant.AMAZON_MARKET, user, null, context);
+        System.out.println(decision);
+
+        /*QueryResult  result = Ralasafe.query(Privilege.QUERY_COMPANY, user, new HashMap());
+        System.out.println(result.getData());*/
     }
 
 }

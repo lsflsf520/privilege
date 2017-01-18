@@ -28,7 +28,9 @@ public class SimpleValue extends DefineVariable {
 			javaClass = "Boolean";
 		} else if (type.equals(org.ralasafe.db.sql.SimpleValue.DATETIME)) {
 			javaClass = "java.util.Date";
-		} else {
+		} else if(type.equals(org.ralasafe.db.sql.SimpleValue.STRING_LIST) || type.equals(org.ralasafe.db.sql.SimpleValue.INTEGER_LIST)){
+			javaClass = "java.util.List";
+		}else {
 			throw new RalasafeException("Not supported SimpleValue type '" + type + "'.");
 		}
 		StringBuffer buff = new StringBuffer();
@@ -36,7 +38,16 @@ public class SimpleValue extends DefineVariable {
 			buff.append(" " + javaClass + " ").append(v).append(" = ").append(
 					SystemConstant.SIMPLE_DATE_FORMAT).append(".parse").append(
 					"(\"").append(value).append("\"); ").append("\n");
-		} else {
+		} else if(type.equals(org.ralasafe.db.sql.SimpleValue.STRING_LIST)){
+			buff.append(" " + javaClass + " ").append(v).append(" = ").append("Arrays.asList(\"").append(value).append("\".split(\",\"));\n");
+		}else if(type.equals(org.ralasafe.db.sql.SimpleValue.INTEGER_LIST)){
+			String tempVar = "_$temp" + String.valueOf(System.currentTimeMillis()).substring(8);
+			buff.append(" " + javaClass + " " + tempVar + " = new ArrayList();\n");
+			buff.append("for(String val : \""+value+"\".split(\",\")){\n");
+			buff.append(tempVar + ".add(Integer.valueOf(val.trim()));\n");
+			buff.append("}\n");
+			buff.append(" " + javaClass + " ").append(v).append(" = ").append(tempVar+ ";\n");
+		}else {
 			buff.append(" " + javaClass + " ").append(v).append(" = new ")
 					.append(javaClass).append("(\"").append(value).append(
 							"\"); ").append("\n");

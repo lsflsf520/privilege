@@ -80,6 +80,26 @@ public class SimpleValueTypeTypeType implements java.io.Serializable {
     public static final SimpleValueTypeTypeType DATETIME = new SimpleValueTypeTypeType(DATETIME_TYPE, "datetime");
 
     /**
+     * The datetime type
+     */
+    public static final int STRING_LIST_TYPE = 5;
+
+    /**
+     * The instance of the datetime type
+     */
+    public static final SimpleValueTypeTypeType STRING_LIST = new SimpleValueTypeTypeType(STRING_LIST_TYPE, "stringlist");
+
+    /**
+     * The datetime type
+     */
+    public static final int INTEGER_LIST_TYPE = 6;
+
+    /**
+     * The instance of the datetime type
+     */
+    public static final SimpleValueTypeTypeType INTEGER_LIST = new SimpleValueTypeTypeType(INTEGER_LIST_TYPE, "integerlist");
+
+    /**
      * Field _memberTable.
      */
     private static java.util.Hashtable _memberTable = init();
@@ -146,6 +166,8 @@ public class SimpleValueTypeTypeType implements java.io.Serializable {
         members.put("float", FLOAT);
         members.put("boolean", BOOLEAN);
         members.put("datetime", DATETIME);
+        members.put("stringlist", STRING_LIST);
+        members.put("integerlist", INTEGER_LIST);
         return members;
     }
 

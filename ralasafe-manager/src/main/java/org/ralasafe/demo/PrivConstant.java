@@ -6,5 +6,6 @@ package org.ralasafe.demo;
 public class PrivConstant {
 
     public static final int RET_MONEY=8;
+    public static final int AMAZON_MARKET=10;
 
 }
