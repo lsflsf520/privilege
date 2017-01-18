@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>          
+<query name="查询我所在的部门" isRawSQL="false" type="sql">
+    <select isDistinct="false"/>                 
+    <from/>                                        
+    <where>                                        
+        <expressionGroup linker="AND"/>          
+    </where>                                       
+    <groupBy/>                                     
+    <orderBy/>                                     
+    <rawSQL>                                       
+        <content></content>                        
+        <select isDistinct="false"/>             
+    </rawSQL>                                      
+    <storedProcedure>                              
+        <content></content>                        
+        <select isDistinct="false"/>             
+    </storedProcedure>                             
+</query>

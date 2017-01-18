@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<datasources>
+	<datasource name="ralasafe" configFile="ralasafe-db.properties"/>
+	<!--<datasource name="app" configFile="app-ds.properties" schemas="self_demo,self_ralasafe"/>-->
+
+	<datasource name="user" configFile="oc_user.properties" schemas="user"/>
+	<datasource name="amazonrank" configFile="oc_amazonrank.properties" schemas="user,amazonrank"/>
+	<!--<datasource name="app" configFile="app-ds.properties" schemas="self_demo"/>-->
+
+</datasources>

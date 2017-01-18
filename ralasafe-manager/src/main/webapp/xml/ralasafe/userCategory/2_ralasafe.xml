@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<userCategory name="所有人" isRawScript="false">
+    <defineVariable name="NUM">
+        <simpleValue type="integer">1</simpleValue>
+    </defineVariable>
+    <defineVariable name="NUM2">
+        <simpleValue type="integer">1</simpleValue>
+    </defineVariable>
+    <exprGroup linker="AND">
+        <binaryExpr>
+            <variable1 name="NUM"/>
+            <simpleOperator>=</simpleOperator>
+            <variable2 name="NUM2"/>
+        </binaryExpr>
+    </exprGroup>
+    <rawScript>
+        <content xml:space="preserve"><![CDATA[]]></content>
+    </rawScript>
+</userCategory>

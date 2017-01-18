@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query name="amazon_uk市场asin" isRawSQL="false" type="sql">
+    <select isDistinct="false"/>
+    <from/>
+    <where>
+        <expressionGroup linker="AND"/>
+    </where>
+    <groupBy/>
+    <orderBy/>
+    <rawSQL>
+        <content xml:space="preserve"><![CDATA[]]></content>
+        <select isDistinct="false"/>
+    </rawSQL>
+    <storedProcedure>
+        <content></content>
+        <select isDistinct="false"/>
+    </storedProcedure>
+</query>
