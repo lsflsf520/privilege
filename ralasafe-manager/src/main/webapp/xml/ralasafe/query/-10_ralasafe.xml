@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<query name="current user's roles" ds="ralasafe" isRawSQL="false" type="sql">
+<query name="current user&apos;s roles" ds="ralasafe" isRawSQL="false" type="sql">
     <select isDistinct="false" mappingClass="org.ralasafe.privilege.UserRole">
         <column name="roleid" tableAlias="t1" order="ASC" javaType="int" property="roleId"/>
     </select>

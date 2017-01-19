@@ -55,7 +55,7 @@ jQuery( document ).ready( function() {
 		isSimpleData: true,
 		treeNodeKey: "id",
 		treeNodeParentKey: "pId",
-		asyncUrl: "../query/queryMng.rls?oper=loadTree",
+		asyncUrl: "../query/queryMng?oper=loadTree",
 		callback: {
 			//beforeExpand: function(){return false;},
 			//beforeCollapse: function(){return false;},

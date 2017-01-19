@@ -114,10 +114,10 @@ jQuery(document).ready(function(){
 		 success:       afterUpdateRole 
 	}; 
 	    
-	jQuery('#roleForm').submit(function() {
+	jQuery('#roleForm').submit(function() { 
 	     jQuery(this).ajaxSubmit(roleOptions); 
 	 	 return false; 
-	});
+	}); 
 });
 
 function checkRoleForm() {

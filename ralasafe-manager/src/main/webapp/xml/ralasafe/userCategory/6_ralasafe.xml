@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<userCategory name="battery用户" isRawScript="false">
-    <defineVariable name="myRoles">
-        <queryRef id="-10" name="current user's roles"/>
+<userCategory name="营业部用户" isRawScript="false">
+    <defineVariable name="subBranchOfficeCompanyLevel">
+        <simpleValue type="integer">3</simpleValue>
     </defineVariable>
-    <defineVariable name="role">
-        <simpleValue type="integer">6</simpleValue>
+    <defineVariable name="userCompanyLevel">
+        <userValue key="companyLevel"/>
     </defineVariable>
     <exprGroup linker="AND">
-        <inExpr>
-            <variable1 name="role"/>
-            <variable2 name="myRoles"/>
-        </inExpr>
+        <binaryExpr>
+            <variable1 name="subBranchOfficeCompanyLevel"/>
+            <simpleOperator>=</simpleOperator>
+            <variable2 name="userCompanyLevel"/>
+        </binaryExpr>
     </exprGroup>
     <rawScript>
-        <content></content>
+        <content xml:space="preserve"><![CDATA[]]></content>
     </rawScript>
 </userCategory>

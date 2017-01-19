@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <userCategory name="Ralasafe 管理员" isRawScript="false">
     <defineVariable name="myRoles">
-        <queryRef id="-10" name="current user's roles"/>
+        <queryRef id="-10" name="current user&apos;s roles"/>
     </defineVariable>
     <defineVariable name="role">
         <simpleValue type="integer">-1</simpleValue>

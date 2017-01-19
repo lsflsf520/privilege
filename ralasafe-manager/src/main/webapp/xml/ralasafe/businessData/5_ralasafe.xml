@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<businessData name="单笔借款大于5000_test" isRawScript="false">
-    <defineVariable name="limit">
-        <simpleValue type="integer">5000</simpleValue>
+<businessData name="amazon市场数据" isRawScript="false">
+    <defineVariable name="marketplace">
+        <contextValue key="marketplace"/>
     </defineVariable>
-    <defineVariable name="loanMoney">
-        <hintValue hint="_$businessData" key="money"/>
+    <defineVariable name="amazon_market">
+        <simpleValue type="stringlist">amazon,amazon_uk,amazon_it</simpleValue>
     </defineVariable>
     <exprGroup linker="AND">
-        <binaryExpr>
-            <variable1 name="loanMoney"/>
-            <simpleOperator>&gt;</simpleOperator>
-            <variable2 name="limit"/>
-        </binaryExpr>
+        <inExpr>
+            <variable1 name="marketplace"/>
+            <variable2 name="amazon_market"/>
+        </inExpr>
     </exprGroup>
     <rawScript>
         <content xml:space="preserve"><![CDATA[]]></content>
