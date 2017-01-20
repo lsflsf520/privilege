@@ -4,18 +4,16 @@
  */
 package org.ralasafe.script;
 
-import java.io.PrintWriter;
-import java.io.StringWriter;
-import java.util.Map;
-
+import bsh.EvalError;
+import bsh.Interpreter;
 import org.ralasafe.SystemConstant;
 import org.ralasafe.entitle.BusinessDataTestResult;
 import org.ralasafe.entitle.QueryManager;
 import org.ralasafe.user.User;
-import org.ralasafe.util.StringUtil;
 
-import bsh.EvalError;
-import bsh.Interpreter;
+import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.util.Map;
 
 public class BusinessData extends AbstractPolicy implements Script {
 	public String getRule() {
@@ -84,7 +82,7 @@ public class BusinessData extends AbstractPolicy implements Script {
 		Interpreter interpreter = new Interpreter();
 		String script = toScript();
 		try {
-			eval(interpreter, user, context, queryManager);
+			eval(interpreter, script, user, context, queryManager);
 			Boolean contain = (Boolean) interpreter
 					.get(SystemConstant.IS_BUSINESS_DATA_VALID);
 			Map variableMap = (Map) interpreter
@@ -104,9 +102,9 @@ public class BusinessData extends AbstractPolicy implements Script {
 		return result;
 	}
 
-	private void eval(Interpreter interpreter, User user, Map context,
+	private void eval(Interpreter interpreter, String script, User user, Map context,
 			QueryManager queryManager) throws EvalError {
-		String script = toScript();
+//		String script = toScript();
 		// Set variables
 		interpreter.set(SystemConstant.USER_KEY, user);
 		interpreter.set(SystemConstant.CONTEXT, context);
