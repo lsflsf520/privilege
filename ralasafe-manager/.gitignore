@@ -2,3 +2,6 @@
 /.settings/
 /.classpath
 /.project
+ralasafe-manager.iml
+/.idea/
+.log
